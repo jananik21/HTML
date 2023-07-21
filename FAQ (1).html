@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agriculture Website - FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function toggleAnswer(element) {
+            var answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <h1>FAQ - Crop Growing Process and Seasonal Guidelines</h1>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer(this)">What are the essential steps in crop growing process?</div>
+        <div class="answer">The crop growing process typically involves seeding, soil preparation, watering, fertilizing,
+            pest control, monitoring growth, and harvesting.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer(this)">What are the key factors to consider for successful crop
+            growth?</div>
+        <div class="answer">Important factors include choosing the right crop varieties, soil quality, proper watering
+            and irrigation, adequate sunlight, appropriate fertilization, pest and disease management, and timely
+            harvesting.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer(this)">How can I determine the best time to plant different crops?</div>
+        <div class="answer">The best time to plant crops depends on the specific crop and the prevailing seasonal
+            conditions. Seasonal guidelines and local agricultural extension services can provide valuable information
+            about the optimal planting periods for different crops.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer(this)">Where can I find information about seasonal guidelines for
+            crop cultivation?</div>
+        <div class="answer">You can refer to agricultural websites, local agricultural extension offices, farming
+            publications, or consult experienced farmers to get detailed seasonal guidelines for crop cultivation in your
+            region.</div>
+    </div>
+
+    <!-- Add more FAQ items as needed -->
+
+</body>
+
+</html>

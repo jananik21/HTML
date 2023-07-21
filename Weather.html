@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Forecast</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Forecast</h1>
+    <form>
+      <label for="city">Enter City:</label>
+      <input type="text" id="city" name="city" required>
+      <button type="submit">Get Forecast</button>
+    </form>
+    <div id="forecast"></div>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    const forecastDiv = document.getElementById('forecast');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const city = document.getElementById('city').value;
+      getWeatherForecast(city);
+    });
+
+    function getWeatherForecast(city) {
+      // Use an appropriate API or data source to fetch the weather forecast data
+      // Replace the API_URL with the actual API endpoint you are using
+      const API_URL = `https://api.example.com/weather?city=${city}`;
+
+      // Make a request to the API
+      fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
+          // Process the response and display the forecast
+          const forecast = data.forecast; // Adjust this based on the API response structure
+          forecastDiv.innerHTML = `<h2>${city}</h2><p>${forecast}</p>`;
+        })
+        .catch(error => {
+          // Handle any errors that occur during the request
+          forecastDiv.innerHTML = `<p>Error fetching weather forecast: ${error.message}</p>`;
+        });
+    }
+  </script>
+</body>
+</html>
